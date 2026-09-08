@@ -1,7 +1,29 @@
 {
-  "last_update_id": 0,
-  "last_type": null,
-  "last_posted_id": null,
+  "last_update_id": 617766386,
+  "last_type": "testimony",
+  "last_posted_id": 6,
   "last_posted_group_id": null,
-  "messages": []
+  "messages": [
+    {
+      "chat_id": "-1004321822792",
+      "id": 4,
+      "type": "testimony",
+      "media_group_id": null,
+      "text": "TESTING"
+    },
+    {
+      "chat_id": "-1004321822792",
+      "id": 5,
+      "type": "testimony",
+      "media_group_id": null,
+      "text": "Hello gh"
+    },
+    {
+      "chat_id": "-1004321822792",
+      "id": 6,
+      "type": "testimony",
+      "media_group_id": null,
+      "text": "Hhhg"
+    }
+  ]
 }
