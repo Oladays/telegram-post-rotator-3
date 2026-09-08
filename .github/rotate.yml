@@ -1,0 +1,46 @@
+name: Rotate Posts
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Telegram rotator
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          NEW_CHANNEL_ID: ${{ secrets.NEW_CHANNEL_ID }}
+          OLD_CHANNEL_ID: ${{ secrets.OLD_CHANNEL_ID }}
+        run: |
+          python fetch_and_post.py
+
+      - name: Save updated pool
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add pool.json
+
+          if git diff --cached --quiet; then
+            echo "No pool changes to save."
+          else
+            git commit -m "Update Telegram post pool"
+            git push
+          fi
