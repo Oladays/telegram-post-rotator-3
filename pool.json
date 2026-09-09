@@ -6,13 +6,6 @@
   "messages": [
     {
       "chat_id": "-1004321822792",
-      "id": 5,
-      "type": "testimony",
-      "media_group_id": null,
-      "text": "Hello gh"
-    },
-    {
-      "chat_id": "-1004321822792",
       "id": 6,
       "type": "testimony",
       "media_group_id": null,
